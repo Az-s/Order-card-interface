@@ -1,0 +1,26 @@
+.Cards {
+    border: 1px rgb(155, 153, 153) solid;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: .3rem;
+    padding: 1rem;
+}
+.Cards h3 {
+    margin: 0 0 10px 0;
+}
+.CardItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.card {
+    width: 40%;
+}
+
+
+.img {
+    height: 30px;
+}
