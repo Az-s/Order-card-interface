@@ -4,14 +4,14 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import './Orders.css';
 
-const Orders = ({ totalPrice }) => {
+const Orders = ({ totalPrice , removeCard }) => {
     return (
         <div className='Orders'>
             <h3>Order details</h3>
             <Grid   justify='space-between' alignItems='center'>
                 <Paper className='Orderinfo' component={Box} p={1} m={1}>
                     awe
-                    <IconButton aria-label="delete" >
+                    <IconButton aria-label="delete" onClick={removeCard}>
                         <DeleteIcon />
                     </IconButton>
                 </Paper>

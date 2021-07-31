@@ -7,6 +7,7 @@ import MochaImg from '../assets/coffee-drinks_americano.jpg';
 import CafelatteImg from '../assets/coffee-drinks_americano.jpg';
 import AffogatoImg from '../assets/coffee-drinks_americano.jpg';
 import './DrinksCard.css'
+import Orders from './Orders';
 
 const DRINKS = {
     Espresso: { name: 'Espresso', price: 100, quantity: 0, img: EspressoImg },
@@ -77,7 +78,7 @@ const DrinksCard = () => {
                     </Card>
                 ))}
             </div>
-            <div><strong>Price: {totalPrice} KGS</strong></div>
+            <Orders totalPrice={totalPrice} removeCard={removeCard}/>
         </div>
     )
 }
