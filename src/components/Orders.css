@@ -1,7 +1,10 @@
 .Orders {
-    border: 1px rgb(155, 153, 153) solid;
     border-radius: .3rem;
-    width: 50%;
+    width: 100%;
+}
+
+.Orders h3 {
+    margin-top: 15px;
 }
 
 .Orderinfo {

@@ -4,7 +4,8 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import './Orders.css';
 
-const Orders = ({ totalPrice, removeCard, id, name, quantity, price , orderCard }) => {
+const Orders = ({ id , totalPrice ,name , price , quanity , removeCard}) => {
+
     // {Object.keys(DRINKS).map(drinksKey => (
     //     <p id={drinksKey}>{DRINKS[drinksKey].name} x{DRINKS[drinksKey].quantity} Price:{DRINKS[drinksKey].price * DRINKS[drinksKey]}</p>
     //   ))}
@@ -15,12 +16,11 @@ const Orders = ({ totalPrice, removeCard, id, name, quantity, price , orderCard 
                 <>
                     <Grid justify='space-between' alignItems='center'>
                         <Paper className='Orderinfo' component={Box} p={1} m={1}>
-                            {name} x{quantity} Price:{price} KGS
+                            {name} x{quanity} Price:{price} KGS
                             <IconButton aria-label="delete" onClick={() => removeCard(id)}>
                                 <DeleteIcon />
                             </IconButton>
                         </Paper>
-
                     </Grid>
                     <Paper component={Box} p={2} m={1}>
                         <strong>Price: {totalPrice} KGS</strong>

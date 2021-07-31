@@ -1,20 +1,22 @@
 .Cards {
     border: 1px rgb(155, 153, 153) solid;
-    width: 50%;
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     border-radius: .3rem;
     padding: 1rem;
 }
 .Cards h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
 }
 .CardItems {
     display: flex;
     justify-content: center;
     align-items: center;    
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 }
 .card {
     width: 40%;
@@ -24,4 +26,8 @@
     float: left;
     height: 120px;
     width: 120px;
+}
+
+.orders {
+    width: 82%;
 }
