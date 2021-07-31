@@ -12,15 +12,16 @@
 .CardItems {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     flex-wrap: wrap;
-    gap: 2px;
+    gap: 5px;
 }
 .card {
     width: 40%;
 }
 
-
 .img {
-    height: 30px;
+    float: left;
+    height: 120px;
+    width: 120px;
 }

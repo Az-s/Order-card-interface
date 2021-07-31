@@ -31,26 +31,32 @@ const DrinksCard = () => {
 
     const [totalPrice, setTotalPrice] = useState(0);
 
+    const [quanity, setQuanity] = useState(0);
+
     const addCard = type => {
         const price = orderCard[type];
         const changePrice = price + 1;
-        const changeCard = {...orderCard};
+        const changeCard = { ...orderCard };
         changeCard[type] = changePrice;
         const addToPrice = DRINKS[type].price;
         const priceCount = totalPrice + addToPrice;
 
+        const addToQuan = DRINKS[type].quantity;
+        const quani = quanity + addToQuan;
+
         setOrderCard(changeCard);
+        setQuanity(quani)
         setTotalPrice(priceCount);
     };
 
     const removeCard = type => {
         const price = orderCard[type];
         const changePrice = price - 1;
-        const changeCard = {...orderCard};
+        const changeCard = { ...orderCard };
         changeCard[type] = changePrice;
         const addToPrice = DRINKS[type].price;
         const priceCount = totalPrice - addToPrice;
-
+        
         setOrderCard(changeCard);
         setTotalPrice(priceCount);
     };
@@ -60,25 +66,34 @@ const DrinksCard = () => {
             <h3>Add coffee type</h3>
             <div className='CardItems'>
                 {Object.keys(DRINKS).map((drinksKey) => (
-                    <Card className='card' onClick={() => addCard(drinksKey)}>
-                        <CardActionArea>
-                            <CardMedia
-                                image={DRINKS[drinksKey].img}
-                                title="Contemplative Reptile"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {DRINKS[drinksKey].name}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    Price: {DRINKS[drinksKey].price} KGS
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                    <>
+                        <Card className='card' onClick={() => addCard(drinksKey)}>
+                            <CardActionArea>
+                                <CardMedia
+                                    image={DRINKS[drinksKey].img}
+                                    title="Contemplative Reptile"
+                                />
+                                <img className='img' src={DRINKS[drinksKey].img} alt={DRINKS[drinksKey].name}></img>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {DRINKS[drinksKey].name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        Price: {DRINKS[drinksKey].price} KGS
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                        {/* <Orders totalPrice={totalPrice} 
+                                removeCard={removeCard} 
+                                id={drinksKey} 
+                                name={DRINKS[drinksKey].name}
+                                quanity={quanity}
+                                price={DRINKS[drinksKey].price}
+                        /> */}
+                    </>
                 ))}
             </div>
-            <Orders totalPrice={totalPrice} removeCard={removeCard}/>
         </div>
     )
 }
